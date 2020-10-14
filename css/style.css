@@ -29,13 +29,43 @@ h2 {
 
 
 .request__form {
-	width: 408px;
-	height: 380px;
+	width: 407px;
+	height: 379px;
+	position: relative;
 	background-color: #c31e2f;
+	z-index: 1;
+}
+
+.request__form::before {
+  display: block;
+  content: '';
+  position: absolute;
+  height: 45px;
+  width: 100%;
+  background-color: #c31e2f;
+  right: 0;
+  top: 0;
+  transform: translateY(-100%) skewY(173.9deg);
+	transform-origin: right; 
+	z-index: -1;
+}
+
+.request__form::after {
+  display: block;
+  content: '';
+  position: absolute;
+  height: 45px;
+  width: 100%;
+  background-color: #c31e2f;
+  right: 0;
+  bottom: 0;
+  transform: translateY(0) skewY(-184.5deg);
+	transform-origin: right; 
+	z-index: -1;
 }
 
 .request__form-title {
-	padding: 30px 0 10px;
+	padding: 27px 0 10px;
 }
 
 .request__form-title,
@@ -49,7 +79,14 @@ h2 {
 	text-align: center;
 	line-height: 0.875;
 	padding-bottom: 25px;
+	letter-spacing: 0.021em;
 }
+
+.request__form form {
+padding: 11px 0 0 7px;
+}
+
+
 
 .request__form input,
 .request__form button {
@@ -73,5 +110,28 @@ h2 {
 	width: 278px;
 	height: 43px;
 	border-radius: 4px;
+	font-size: 18px;
+	text-transform: uppercase;
+	color: #fff;
+	box-shadow: 
+	inset -1px -1px 0px 0px #383838,
+	inset 1px 1px 0px 0px #b9b9b9;
+}
 
+.production__items {
+	display: flex;
+	justify-content: space-between;
+	padding: 75px 0;
+}
+
+.production__item p {
+	text-align: center;
+	font-size: 25px;
+	padding: 10px 0 0 0;
+}
+
+.advantages {
+	background: url(../img/background_advantages.png) no-repeat center center;
+	background-size: 100%;
+	min-height: 760px;
 }
